@@ -29,8 +29,8 @@
 			var new_task = $('.add-new-task input[name=new-task]').val();
 			//This if statement is ckecking if new_task is true or not  
 			if(new_task != ''){
-				$.post('includes/add-task.php', { task: new_task}, function(data){
-					$(('add-new-task input[name=new-task]').val();
+				$.post('includes/add-task.php', {task: new_task}, function(data){
+					$('add-new-task input[name=new-task]').val();
 						$(data).appendTo('task-list ul').hide().fadeIn();
 				});
 			}
