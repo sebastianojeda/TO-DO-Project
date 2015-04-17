@@ -3,8 +3,6 @@
 <head>
 	<title> Simple To-Do List </title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 </head>
 <body>
 
@@ -21,7 +19,7 @@
 					if($numrows>0){
 						while($row = $result->fetch_assoc()){
 							$task_id = $row['id'];
-							$task_name = $row["task"];
+							$task_name = $row['task'];
 
 							echo '<li>
 							<span>'.$task_name.'</span>
@@ -51,7 +49,7 @@
 			if(new_task != ''){
 				$.post('includes/add-task.php', {task: new_task}, function(data){
 					$('add-new-task input[name=new-task]').val();
-						$(data).appendTo('task-list ul').hide().fadeIn();
+						$(data).appendTo('.task-list ul').hide().fadeIn();
 				});
 			}
 			return false;
